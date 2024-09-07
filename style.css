@@ -1,0 +1,295 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  width: 90%;
+  margin: 0 auto;
+}
+.slider-container {
+  max-width: 600px;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 100%;
+  display: block;
+}
+
+/* Dots Container */
+#dots-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: lightgray;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  width: 16px;
+  height: 16px;
+  background-color: gray;
+}
+
+.dot.mid {
+  width: 14px;
+  height: 14px;
+  background-color: silver;
+}
+
+.dot.small {
+  width: 12px;
+  height: 12px;
+  background-color: lightgray;
+}
+
+/* Thumbnail */
+.thumbnail-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.thumbnail-container img {
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+/* Style untuk div variant dengan gambar-gambar berbentuk lingkaran */
+.variant-container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden; /* Hapus scroll vertikal */
+  white-space: nowrap; /* Gambar tetap pada satu baris */
+  padding: 10px; /* Jarak internal */
+  box-sizing: border-box; /* Menghitung padding dalam ukuran total */
+  scroll-snap-type: x mandatory; /* Mengaktifkan snap pada scroll */
+}
+
+.variant {
+  width: 100px; /* Lebar gambar */
+  height: 100px; /* Tinggi gambar */
+  border-radius: 50%; /* Bentuk lingkaran */
+  margin-right: 10px; /* Jarak antar gambar */
+  object-fit: cover; /* Menyesuaikan gambar dalam lingkaran */
+  scroll-snap-align: center; /* Snap gambar di tengah saat scroll */
+  cursor: pointer; /* Tampilan kursor saat hover */
+}
+
+.variant::-webkit-scrollbar {
+  display: none; /* Hapus scrollbar pada Webkit browser */
+}
+
+/* Style fullscreen container */
+#fullscreen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8); /* Latar belakang semi-transparan */
+}
+
+/* Style untuk slider fullscreen */
+#fullscreen-slider {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+/* Style close button */
+#close-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Fullscreen */
+.fullscreen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.fullscreen-container img {
+  max-width: 90%;
+  max-height: 90%;
+  transition: transform 0.3s ease-in-out;
+  cursor: grab;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 999;
+  text-transform: uppercase;
+}
+
+.close-btn:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
