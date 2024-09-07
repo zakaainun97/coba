@@ -94,6 +94,7 @@ sliderContainer.addEventListener("touchend", () => {
 slider.addEventListener("click", () => {
   fullscreenSlider.src = slider.src; // Mengambil gambar saat ini di main slider
   fullscreenContainer.style.display = "flex"; // Menampilkan fullscreen
+  fullscreenContainer.style.zIndex = '1000';
 });
 
 // Close fullscreen
